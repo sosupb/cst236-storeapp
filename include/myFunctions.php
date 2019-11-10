@@ -14,7 +14,7 @@ Description:
 
 //function to open the database for insertion and searching
 function dbOpen() {
-    $db = new mysqli('localhost', 'root', 'root', 'cst236_storeapp_db');
+    $db = new mysqli('uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 'hiemwb6q2xnmt8yu', 'va9jwcx8x6uxxu37', 'cqsnoocnm70s1snx');
     //check if we have a connection
     if (mysqli_connect_errno()) {
         $_SESSION['warningMessage'] = "Could not connect to server at this time!";
