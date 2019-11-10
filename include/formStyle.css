@@ -1,0 +1,132 @@
+/*
+Project name: CST-236 ECommerce Store App
+    Version:   1.0
+Module name:  formStyle.css
+    Version:   1.0
+Author:		 Marc Teixeira
+Date:         11/9/2019
+Description: 
+   
+*/
+
+/*Form styles for both registration and login*/
+form {
+    width: 47%;
+    border: 3px solid black;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    text-align: left;
+}
+
+/*Form wrapper to display them together on one line*/
+.formWrapper{
+	text-align: justify;
+	width: 100%;
+}
+
+/*Main Message styling*/
+.message{
+	text-align: center;
+	margin: auto;
+	width: 50%;
+}
+
+
+/*styling for each field in the registration form and login page except the submit button*/
+input[type=text], input[type=password], input[type=email], select{
+	width: 50%;
+	padding: 5px;
+	border: 2px solid #40a5a2;
+}
+
+/*styling for the submit button*/
+input[type=submit]{
+	width: 50%;
+	padding: 5px;
+	display: block;
+	margin: 0 auto;
+	background-color: #4CAF50;
+	color: white;
+	border-color: #4CAF50;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+/*shadow and color effects for submit button*/
+input[type=submit]:hover{
+	background-color: white;
+  	color: #4CAF50;
+  	box-shadow: none;
+}
+
+/*red coloring for text of error messages*/
+.error {
+	color: #FF0000;
+}
+
+/*general styles for the body of each page*/
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/*wrapper for content on the page*/
+.wrapper {
+  padding-bottom: 4rem;
+}
+
+/*header for all pages*/
+.header {
+  padding: 1px;
+  text-align: center;
+  background: #2f93a8;
+  color: white;
+}
+
+/*footer for all pages*/
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  padding: 1px;
+  text-align: center;
+  background: #2f93a8;
+  color: white;
+}
+
+/*navigation bar text*/
+.navbar p {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding-right: 10px;
+}
+
+/*navigation bar that goes under header for all pages*/
+.navbar {
+  display: flex;
+  background-color: #2f93a8;
+}
+
+/*button styling for links on navigation bar*/
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*hover effects for links on navigation bar*/
+.navbar a:hover {
+  background-color: #ddd !important;
+  color: black;
+}
+
+
