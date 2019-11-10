@@ -61,8 +61,7 @@ if($ready) {
     $state = $address->getState();
     $zipCode = $address->getPostalCode();
     $country = $address->getCountry();
-    
-    echo $user->getName();
+   
     
     //set up insert query parameter for user
     $query = "INSERT INTO `users` (USER_NAME, PASSWORD, ROLE) VALUES (?, ?, ?)";
@@ -97,7 +96,6 @@ if($ready) {
         }
         
     } else {
-        echo $user->getName();
         $db->close();
         $mainMessageErr = "An error has occurred. You were not regester.";
     }
