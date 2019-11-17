@@ -14,7 +14,7 @@ Description: This file contains all the required php and html to create the top 
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="/cst236-storeapp/presentation/formStyle.css">
+		<link rel="stylesheet" type="text/css" href="/presentation/formStyle.css">
 		<title>Welcome To The Store</title>
 	</head>
 	
