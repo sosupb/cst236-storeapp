@@ -8,7 +8,7 @@
  * Nov 16, 2019
  */
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/Autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Autoloader.php';
 
 class ProductBusinessService
 {

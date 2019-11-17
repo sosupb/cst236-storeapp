@@ -10,8 +10,8 @@ Description: This file displays a single item in the catalog.
 
 <!-- header -->
 <?php 
-    include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_header.php'; 
-    include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/presentation/handlers/itemViewHandler.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php'; 
+    include $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/itemViewHandler.php';
 ?>		
 
 <div class="message">
@@ -40,4 +40,4 @@ else {
 ?>
 
 <!-- footer -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_footer.php'?>

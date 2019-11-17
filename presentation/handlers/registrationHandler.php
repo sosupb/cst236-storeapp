@@ -11,8 +11,8 @@ Description:
 -->
 
 <?php
-    include_once '../../utility/header.php';
-    require_once '../../Autoloader.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/utility/header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/Autoloader.php';
 
     // define error message variables and set to empty values
     $userNameRegErr = $passwordRegErr = $password2RegErr = "";

@@ -9,8 +9,8 @@ Description:
    This file handles the catalog display and population
 -->
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/header.php';
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/Autoloader.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/utility/header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/Autoloader.php';
     
     //check to see if we have started viewing the catalog
     $page = 1;

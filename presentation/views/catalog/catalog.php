@@ -10,8 +10,8 @@ Description: This file displays the items in the product catalog 10 at a time
 
 <!-- header -->
 <?php 
-    include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_header.php'; 
-    include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/presentation/handlers/catalogHandler.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php'; 
+    include $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/catalogHandler.php';
 ?>		
 
 <div class="message">
@@ -46,4 +46,4 @@ Description: This file displays the items in the product catalog 10 at a time
 
 
 <!-- footer -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_footer.php'?>
