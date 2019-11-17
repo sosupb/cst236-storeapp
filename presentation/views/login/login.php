@@ -13,7 +13,7 @@ Description:
 -->
 
 <!-- header -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php'; ?>
 
 <!-- setup for login attempts and link to loginHandler -->
 <?php
@@ -41,7 +41,7 @@ Description:
     </form>
     
     <!-- Registration Form -->
-    <form action="/cst236-storeapp/presentation/handlers/registrationHandler.php" method="POST" class="loginForm">
+    <form action="/presentation/handlers/registrationHandler.php" method="POST" class="loginForm">
     	<div class="message">
         	<h2>Not a member? Sign up here!</h2>
         </div>
@@ -63,4 +63,4 @@ Description:
 </section>
 
 <!-- footer -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_footer.php'?>

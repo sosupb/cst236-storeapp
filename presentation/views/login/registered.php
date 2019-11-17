@@ -10,7 +10,7 @@ Description:
 -->
 
 <!-- header -->
-<?php include '../../../utility/_header.php';?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php';?>
 
 <div class="message">
 	<h2>You have been registered. Thank you for signing up <?php //user name here?>.</h2>
@@ -18,4 +18,4 @@ Description:
 </div>
 
 <!-- footer -->
-<?php include '../../../utility/_footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_footer.php'?>

@@ -15,7 +15,7 @@ Description:
 
 
 <!-- header -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_header.php';?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php';?>
 
 <div class="message">
 	<h2>Please fill out the form to finish registering</h2>
@@ -115,4 +115,4 @@ Description:
 </section>
 
 <!-- footer -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_footer.php'?>

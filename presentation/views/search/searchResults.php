@@ -9,7 +9,7 @@ Description: This file is used to display the different types of information to 
  -->
 
 <!-- header -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_header.php';?>		
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php';?>		
 
 <div class="message">
 	<!-- message -->

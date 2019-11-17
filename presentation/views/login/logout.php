@@ -10,7 +10,7 @@ Description:
 -->
 
 <!-- header -->
-<?php include '../../../utility/_header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php'; ?>
 
 <?php
     session_destroy();
@@ -22,4 +22,4 @@ Description:
 </div>
 
 <!-- footer -->
-<?php include '../../../utility/_footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_footer.php'?>

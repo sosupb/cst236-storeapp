@@ -9,7 +9,7 @@ Description: This file is the search page for the whole store. It allows you to 
  -->
 
 <!-- header -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_header.php'; ?>		
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php'; ?>		
 
 <div class="message">
 	<!-- message -->
@@ -36,4 +36,4 @@ Description: This file is the search page for the whole store. It allows you to 
 
 
 <!-- footer -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_footer.php'?>
