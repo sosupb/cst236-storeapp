@@ -18,7 +18,7 @@ Description:
 
 <div class="message">
 	<h2>You have been logged out. Thank you for shopping here. <?php //user name here?>.</h2>
-	<a href="/cst236-storeapp/index.php">Click Here</a> to return to the home page.
+	<a href="/index.php">Click Here</a> to return to the home page.
 </div>
 
 <!-- footer -->

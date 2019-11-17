@@ -24,7 +24,7 @@ Description:
 	
 <section class="loginFormWrapper">
 <!-- Login Form -->
-    <form action="/cst236-storeapp/presentation/handlers/loginHandler.php" method="POST" class="loginForm">
+    <form action="/presentation/handlers/loginHandler.php" method="POST" class="loginForm">
             <div class="message">
             	<h2>Please type your username and password to Login</h2>
             </div>

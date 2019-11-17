@@ -14,7 +14,7 @@ Description:
 
 <div class="message">
 	<h2>You have been registered. Thank you for signing up <?php //user name here?>.</h2>
-	<a href="/cst236-storeapp/index.php">Click Here</a> to visit the store.
+	<a href="/index.php">Click Here</a> to visit the store.
 </div>
 
 <!-- footer -->

@@ -23,7 +23,7 @@ Description:
 	
 <section class='searchFormWrapper'>				
     <!-- Registration Form -->
-    <form action="registrationHandler2.php" method="POST" class="loginForm" style="margin: auto">
+    <form action="/presentation/handlers/registrationHandler2.php" method="POST" class="loginForm" style="margin: auto">
     	<p align="right"><span class="error"><?php if(isset($regMessageErr)) {echo $regMessageErr;}?></span></p>
     	<br/>
     	
