@@ -8,11 +8,11 @@
     <table class="searchResultList">
     	<thead>
     		<tr>
-        		<td>ID</td>
-        		<td>User Name</td>
-        		<td>First Name</td>
-        		<td>Last Name</td>
-        		<td>Role</td>
+        		<th>ID</th>
+        		<th>User Name</th>
+        		<th>First Name</th>
+        		<th>Last Name</th>
+        		<th>Role</th>
     		</tr>
     	</thead>
     	
