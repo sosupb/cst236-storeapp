@@ -17,7 +17,7 @@ Description:
 
 <!-- setup for login attempts and link to loginHandler -->
 <?php
-   if(!isset($_SESSION['loginAttempts'])){
+   if(!isset($_SESSION['loginAttempts']) || $_SESSION['loginAttempts'] == 0){
       $_SESSION['loginAttempts'] = 10;
    }
 ?>
