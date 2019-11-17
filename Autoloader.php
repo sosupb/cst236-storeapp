@@ -5,14 +5,14 @@ spl_autoload_register(function($class) {
     //get the difference in folders
     $lastDirectories = substr(getcwd(), strlen(__DIR__));
     
-    echo "getcwd = : " . getcwd() . " <br>";
-    echo "__DIR__ = : " . __DIR__ . " <br>";
-    echo "lastDirectories = : " . $lastDirectories . " <br>";
+    //echo "getcwd = : " . getcwd() . " <br>";
+    //echo "__DIR__ = : " . __DIR__ . " <br>";
+    //echo "lastDirectories = : " . $lastDirectories . " <br>";
     
     //count the number of slashes
-    $numberOfLastDirectories = substr_count($lastDirectories, '\\');
+    $numberOfLastDirectories = substr_count($lastDirectories, '/');
     
-    echo "number of driectories different = : " . $numberOfLastDirectories . " <br>";
+    //echo "number of driectories different = : " . $numberOfLastDirectories . " <br>";
     
     //look up locations for class in this app
     $directories = ['businessService', 'businessService/model', 'dataService', 'presentation', 'presentation/handlers', 'presentation/views', 'presentation/views/login', 'utility'];
