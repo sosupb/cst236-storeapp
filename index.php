@@ -14,7 +14,7 @@ Description: This file is the main menu page for the whole store. It will contai
 <div class="message">
 	<!-- Home page message -->
 	<h2><?php if($_SESSION['User_ID'] != -1){echo "Welcome to your Home page " . $_SESSION['UserName'];} else { echo "Home Page";}?></h2>
-	
+	<p><?php echo $_SERVER['DOCUMENT_ROOT'];?>
 	<!-- warning message if any -->
 	<?php
         //warning messages here
