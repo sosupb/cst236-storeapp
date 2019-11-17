@@ -9,7 +9,7 @@ Description: This file is the main menu page for the whole store. It will contai
  -->
 
 <!-- header -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_header.php'; ?>		
+<?php include 'utility/_header.php'; ?>		
 
 <div class="message">
 	<!-- Home page message -->
@@ -22,4 +22,4 @@ Description: This file is the main menu page for the whole store. It will contai
 </div>
 
 <!-- footer -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_footer.php'?>
+<?php include 'utility/_footer.php'?>
