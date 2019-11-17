@@ -33,7 +33,7 @@ Description: This file is used to display the different types of information to 
 </div>
 
 <?php
-    echo "<div class='message'><a href='/cst236-storeapp/presentation/views/search/search.php'>Click Here </a> to return to search!</div><br>";
+    echo "<div class='message'><a href='/presentation/views/search/search.php'>Click Here </a> to return to search!</div><br>";
     
     if($_GET['searchType'] == 'firstName' && isset($users)) {
         include '_displayUserResults.php';
@@ -45,4 +45,4 @@ Description: This file is used to display the different types of information to 
 ?>
 
 <!-- footer -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cst236-storeapp/utility/_footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_footer.php'?>
