@@ -45,12 +45,12 @@ Description:
                 $_SESSION['UserName'] = $user->getName();
                 $_SESSION['User'] = serialize($user);
                 
-                header("Location: /cst236-storeapp/index.php");
+                header("Location: /index.php");
             } 
             else {          //failed login
                 $_SESSION['loginAttempts'] -= 1;
                 $loginMessageErr = "The username or password is incorrect. Please try again. You have " . $_SESSION['loginAttempts'] . " more attempts.";
-                include '../views/login/login.php';
+                include '/presentation/views/login/login.php';
                 exit();
             }
                           
@@ -58,11 +58,11 @@ Description:
         elseif($_SESSION['loginAttempts'] <= 1) {    //we are out of attempts
             $_SESSION['loginAttempts'] = 0;
             $loginMessageErr = "You are out of login attempts! Please come back later!";
-            include '../views/login/login.php';
+            include '/presentation/views/login/login.php';
         } 
         else { //not ready
             $loginMessageErr = "";
-            include '../views/login/login.php';
+            include '/presentation/views/login/login.php';
         }
     }
 ?>

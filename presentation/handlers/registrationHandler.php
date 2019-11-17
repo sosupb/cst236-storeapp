@@ -58,16 +58,16 @@ Description:
             
             if(!$dbService->checkUser($user->getName())) { //successful check of registration and move to next form
                 $_SESSION["User"] = serialize($user);
-                header('Location: /cst236-storeapp/presentation/views/login/registrationFormPage2.php');
+                header('Location: /presentation/views/login/registrationFormPage2.php');
             }
             else {  //user already exists
                 $regMessageErr = "The user name you entered is already in use.";
-                include '../views/login/login.php';
+                include '/presentation/views/login/login.php';
                 exit();
             }
         }
         else { //not ready to move to next form
-            include '../views/login/login.php';
+            include '/presentation/views/login/login.php';
         }
     }
 ?>

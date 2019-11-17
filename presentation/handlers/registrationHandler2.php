@@ -65,22 +65,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else { //failed to insert new user
             $regMessageErr = "Could not create new user!";
-            include '../views/login/registrationFormPage2.php';
+            include '/presentation/views/login/registrationFormPage2.php';
             exit();
         }
         
         if($dbService->insertAddress($_SESSION['User_ID'], $firstName, $middleName, $lastName, $address1, $address2, $city, $state, $zipCode, $country)) {
-            header("Location: registered.php");
+            header("Location: /presentation/views/login/registered.php");
         }
         else {
             $mainMessageErr = "An error has occurred. You were not regester.";
-            include '../views/login/registrationFormPage2.php';
+            include '/presentation/views/login/registrationFormPage2.php';
             exit();
         }
             
     } else {
         $regMessageErr = "* required fields";
-        include '../views/login/registrationFormPage2.php';
+        include '/presentation/views/login/registrationFormPage2.php';
     }
     
 }
