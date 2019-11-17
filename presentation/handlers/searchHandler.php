@@ -19,12 +19,12 @@ $searchPattern = $_GET['name'];
 if($_GET['searchType'] == "firstName"){
     $bs = new UserBusinessService();  
     $users = $bs->findByFirstName($searchPattern);
-    include '../views/search/searchResults.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/search/searchResults.php';
 }
 elseif($_GET['searchType'] == "productName"){
     $bs = new ProductBusinessService();
     $products = $bs->findByProductName($searchPattern);
-    include '../views/search/searchResults.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/search/searchResults.php';
 }
 
 
