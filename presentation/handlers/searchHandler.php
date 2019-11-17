@@ -16,14 +16,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Autoloader.php';
 
 $searchPattern = $_GET['name'];
 
+echo "test";
 if($_GET['searchType'] == "firstName"){
     $bs = new UserBusinessService();  
     $users = $bs->findByFirstName($searchPattern);
+    echo "test1";
     include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/search/searchResults.php';
 }
 elseif($_GET['searchType'] == "productName"){
     $bs = new ProductBusinessService();
     $products = $bs->findByProductName($searchPattern);
+    echo "test2";
     include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/search/searchResults.php';
 }
 
