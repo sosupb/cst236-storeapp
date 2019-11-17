@@ -26,10 +26,10 @@ Description: This file contains all the required php and html to create the top 
               <?php 
               if(isset($_SESSION['User_ID']) && $_SESSION['User_ID'] != -1) {
                   echo '<p>You are logged in as ' . $_SESSION['UserName'] . ' </p>';
-                  echo '<a href="/cst236-storeapp/presentation/views/login/logout.php">Logout</a>';
+                  echo '<a href="/presentation/views/login/logout.php">Logout</a>';
               } else {
                   $_SESSION['User_ID'] = -1;
-                  echo '<a href="/cst236-storeapp/presentation/views/login/login.php">Login/Sign Up</a>';
+                  echo '<a href="/presentation/views/login/login.php">Login/Sign Up</a>';
               }
                     
               ?>
@@ -45,9 +45,9 @@ Description: This file contains all the required php and html to create the top 
             <!-- Navigation Bar -->
             <div class="navbar">
               <!-- each tab on the nav bar has a color change to notify which page you are on -->
-              <a href="/cst236-storeapp/index.php" <?php if(basename($_SERVER['PHP_SELF']) == "index.php") { echo 'style="background-color: #429b82";'; } ?>>Home</a>
-              <a href="/cst236-storeapp/presentation/views/catalog/catalog.php?CatalogPage=1" <?php if(basename($_SERVER['PHP_SELF']) == "catalog.php") { echo 'style="background-color: #429b82";'; } ?>>Catalog</a>
-              <a href="/cst236-storeapp/presentation/views/search/search.php" <?php if(basename($_SERVER['PHP_SELF']) == "search.php") { echo 'style="background-color: #429b82";'; } ?>>Search</a>
+              <a href="/index.php" <?php if(basename($_SERVER['PHP_SELF']) == "index.php") { echo 'style="background-color: #429b82";'; } ?>>Home</a>
+              <a href="/presentation/views/catalog/catalog.php?CatalogPage=1" <?php if(basename($_SERVER['PHP_SELF']) == "catalog.php") { echo 'style="background-color: #429b82";'; } ?>>Catalog</a>
+              <a href="/presentation/views/search/search.php" <?php if(basename($_SERVER['PHP_SELF']) == "search.php") { echo 'style="background-color: #429b82";'; } ?>>Search</a>
               <!-- add more buttons for the header here -->
               
             </div>
