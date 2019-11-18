@@ -50,7 +50,7 @@ Description:
             else {          //failed login
                 $_SESSION['loginAttempts'] -= 1;
                 $loginMessageErr = "The username or password is incorrect. Please try again. You have " . $_SESSION['loginAttempts'] . " more attempts.";
-                include '/presentation/views/login/login.php';
+                include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/login/login.php';
                 exit();
             }
                           
@@ -58,11 +58,11 @@ Description:
         elseif($_SESSION['loginAttempts'] <= 1) {    //we are out of attempts
             $_SESSION['loginAttempts'] = 0;
             $loginMessageErr = "You are out of login attempts! Please come back later!";
-            include '/presentation/views/login/login.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/login/login.php';
         } 
         else { //not ready
             $loginMessageErr = "";
-            include '/presentation/views/login/login.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/login/login.php';
         }
     }
 ?>

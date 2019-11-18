@@ -62,12 +62,12 @@ Description:
             }
             else {  //user already exists
                 $regMessageErr = "The user name you entered is already in use.";
-                include '/presentation/views/login/login.php';
+                include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/login/login.php';
                 exit();
             }
         }
         else { //not ready to move to next form
-            include '/presentation/views/login/login.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/login/login.php';
         }
     }
 ?>

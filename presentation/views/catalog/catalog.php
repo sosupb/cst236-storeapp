@@ -25,7 +25,7 @@ Description: This file displays the items in the product catalog 10 at a time
 </div>
 
 <?php 
-    include '_displayCatalogItems.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/catalog/_displayCatalogItems.php';
     
     
     echo "<div class='message'>";

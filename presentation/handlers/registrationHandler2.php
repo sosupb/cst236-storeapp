@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else { //failed to insert new user
             $regMessageErr = "Could not create new user!";
-            include '/presentation/views/login/registrationFormPage2.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/login/registrationFormPage2.php';
             exit();
         }
         
@@ -74,13 +74,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else {
             $mainMessageErr = "An error has occurred. You were not regester.";
-            include '/presentation/views/login/registrationFormPage2.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/login/registrationFormPage2.php';
             exit();
         }
             
     } else {
         $regMessageErr = "* required fields";
-        include '/presentation/views/login/registrationFormPage2.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/presentation/views/login/registrationFormPage2.php';
     }
     
 }
