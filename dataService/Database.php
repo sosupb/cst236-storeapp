@@ -12,7 +12,7 @@ class Database
 {
     //properties
     private $dbServerName = "uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com"; //"localhost";
-    private $dbUsername = "root"; //"hiemwb6q2xnmt8yu";
+    private $dbUsername = "hiemwb6q2xnmt8yu"; //"root";
     private $dbPassword = "va9jwcx8x6uxxu37"; //"root";
     private $dbName = "cqsnoocnm70s1snx"; //"cst236_storeapp_db";
     
