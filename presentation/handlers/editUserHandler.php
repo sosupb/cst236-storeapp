@@ -71,7 +71,7 @@ Description:
         else if($_SESSION['User_ID'] == $_GET['UserID']) {
             $bs = new UserBusinessService();
             $viewedUser = $bs->findByID($_GET['UserID']);
-            $viewAddress = $bs->getUserAddress($viewedUser->getId());
+            $viewedAddress = $bs->getUserAddress($viewedUser->getId());
         }
         else {
             $userErrMessage = "You do not have access to view that users information.";
