@@ -29,7 +29,7 @@ Description: This file displays the items in the product catalog 10 at a time
     
     
     echo "<div class='message'>";
-    if(isset($maxPageNumber) && isset($page)){
+    if(isset($maxPageNumber) && isset($page)){  //add navigation buttons at the bottom
         if($page == 1) {
             echo "<button onclick=\"window.location.href='catalog.php?CatalogPage=" . ($page + 1) . "';\">Next Page</button>";
         }
@@ -39,6 +39,12 @@ Description: This file displays the items in the product catalog 10 at a time
         }
         elseif ($page == $maxPageNumber){
             echo "<button onclick=\"window.location.href='catalog.php?CatalogPage=" . ($page - 1) . "';\">Previous Page</button>";
+        }
+    }
+    
+    if(isset($_SESSION['User'])) { //add create new product button for admins
+        if(unserialize($_SESSION['User'])->getRole() == 4) {
+            echo "<button onclick=\"window.location.href='/presentation/handlers/editItemHandler.php';\">Add New Product</button>";
         }
     }
     echo "</div>";

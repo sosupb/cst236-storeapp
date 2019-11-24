@@ -12,13 +12,16 @@ require_once 'Address.php';
 class User
 {
     //properties
+    private $id;
     private $name;
     private $password;
     private $role;
+    private $address;
     
     
     //constructor
-    public function __construct($name, $password, $role) {
+    public function __construct($id, $name, $password, $role) {
+        $this->id = $id;
         $this->name = $name;
         $this->password = $password;
         $this->role = $role;
@@ -53,7 +56,15 @@ class User
     {
         return $this->role;
     }
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
+    
     
     
 }

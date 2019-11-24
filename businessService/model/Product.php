@@ -11,13 +11,15 @@
 class Product
 {
     //properties
+    private $id;
     private $name;
     private $description;
     private $price;
     
     
     //constructor
-    public function __construct($name, $description, $price) {
+    public function __construct($id, $name, $description, $price) {
+        $this->id = $id;
         $this->name = $name;
         $this->description = $description;
         $this->price = $price;
@@ -53,5 +55,13 @@ class Product
         return $this->price;
     }
     
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
 }
 

@@ -29,11 +29,14 @@ if(!isset($product)){
     echo "<h1>No Product Match!</h1>";
 }
 else {
-    echo "<div>";
+    echo "<div style=\"padding: 10px; \">";
         echo "<p>Item ID:" . $product['ID'] . "</p><br><hr>"; 
         echo "<h1>" . $product['PRODUCT_NAME'] . "</h1><br>";
         echo "<p>Description: " . $product['DESCRIPTION'] . "</p><br>";
         echo "<p>Price per item: $" . $product['PRICE'] . "</p><br>";
+        if($adminStatus){
+            echo "<button onclick=\" window.location.href='/presentation/handlers/editItemHandler.php?ItemID=" . $product['ID'] . "'\">Edit Product</button>";
+        }
     echo "</div>";
 }
 

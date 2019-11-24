@@ -118,7 +118,7 @@ Description:
 	width: 50%;
 }
 
-/*Main message buttonjs styles*/
+/*Main message button styles*/
 .message button{
 	margin: 10px;
 }
@@ -219,6 +219,26 @@ body {
   color: black;
 }
 
+/*styling for red waring buttons*/
+.warning button{
+	width: 50%;
+	padding: 5px;
+	display: block;
+	margin: 0 auto;
+	background-color: #F00;
+	color: white;
+	border-color: #F00;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+/*shadow and color effects for submit button*/
+.warning button:hover{
+	background-color: white;
+  	color: #c14a39;
+  	box-shadow: none;
+}
 
 
 

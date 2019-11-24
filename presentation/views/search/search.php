@@ -9,7 +9,10 @@ Description: This file is the search page for the whole store. It allows you to 
  -->
 
 <!-- header -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php'; ?>		
+<?php 
+include $_SERVER['DOCUMENT_ROOT'] . '/utility/_header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Autoloader.php'; 
+?>
 
 <div class="message">
 	<!-- message -->
@@ -24,7 +27,17 @@ Description: This file is the search page for the whole store. It allows you to 
     <form action="../../handlers/searchHandler.php" method="GET" class="searchForm">
     	<label for="searchType">Search Type:</label><br>
     		<select id="searchType" name="searchType">
-    			<option value="firstName">Users First Name</option>
+    			<?php 
+    			//add in options for an admin search
+    			if(isset($_SESSION['User'])) {
+
+    			    $user = unserialize($_SESSION['User']);
+    			    if($user->getRole() == 4) {
+    			        
+    			         echo "<option value='firstName'>Users First Name</option>";
+    			    }
+    			}
+    			?>   			
     			<option value="productName">Product Name</option>
     		</select><br><br>
     	<label for="searchField">Search:</label><br>

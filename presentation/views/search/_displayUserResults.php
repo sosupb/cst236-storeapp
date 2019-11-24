@@ -18,7 +18,7 @@
     	
         <?php
             foreach($users as $user) {
-                echo "<tr>";
+                echo "<tr onclick=\"window.location.href='../handlers/editUserHandler.php?UserID=" . $user['USER_ID'] . "';\">";
                 echo "<td>" . $user['USER_ID'] . "</td>" . "<td>" . $user['USER_NAME'] . "</td>" . "<td>" . $user['FIRST_NAME'] . "</td>". "<td>" . $user['LAST_NAME'] . "</td>". "<td>" . $user['ROLE'] . "</td>";
                 echo "</tr>";
             }

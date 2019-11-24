@@ -22,7 +22,7 @@ Description:
     //check each of the required fields and populate thier error message as necessary.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {  
          
-        $user = new User($_POST["RegUserName"], $_POST["RegPassword"], 1);
+        $user = new User(-1, $_POST["RegUserName"], $_POST["RegPassword"], 1);
         $password2 = $_POST["RegPassword2"];
         
         $ready = true;
@@ -52,11 +52,11 @@ Description:
         } 
         
         if($ready) {
-            $dbService = new RegistrationDataService();
+            $bs = new UserBusinessService();
             
             //check for a duplicate user
             
-            if(!$dbService->checkUser($user->getName())) { //successful check of registration and move to next form
+            if(!$bs->checkUser($user->getName())) { //successful check of registration and move to next form
                 $_SESSION["User"] = serialize($user);
                 header('Location: /presentation/views/login/registrationFormPage2.php');
             }

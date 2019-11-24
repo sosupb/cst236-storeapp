@@ -23,7 +23,7 @@ Description:
         
         $ready = true; //we have been through the form at least once and need to populate it with values
         
-        $user = new User($_POST["LoginUserName"], $_POST["LoginPassword"], 1);
+        $user = new User(-1, $_POST["LoginUserName"], $_POST["LoginPassword"], 1);
         
         if (empty($user->getName())) {
             $userNameErr = "* User Name is required!";
@@ -37,13 +37,12 @@ Description:
         
         if($_SESSION['loginAttempts'] > 1 && $ready) {   //ready to attempt another login
             
-            $dbService = new LoginDataService();
-            
-            $_SESSION['User_ID'] = $dbService->loginUser($user->getName(), $user->getPassword());
+            $bs = new UserBusinessService();
+            $_SESSION['User_ID'] = $bs->loginUser($user->getName(), $user->getPassword());
             
             if($_SESSION['User_ID'] > -1) {  //successful login
                 $_SESSION['UserName'] = $user->getName();
-                $_SESSION['User'] = serialize($user);
+                $_SESSION['User'] = serialize($bs->findByID($_SESSION['User_ID']));
                 
                 header("Location: /index.php");
             } 

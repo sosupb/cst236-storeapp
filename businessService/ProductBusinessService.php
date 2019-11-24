@@ -22,6 +22,14 @@ class ProductBusinessService
         return $products;
     }
     
+    public function findByID($id) {
+        $dbservice = new ProductDataService();
+        
+        $product = $dbservice->findByID($id);
+        
+        return new Product($id, $product['PRODUCT_NAME'], $product['DESCRIPTION'], $product['PRICE']);
+    }
+    
     public function getProductsByPage($page) {
         $products = array();
         
@@ -40,6 +48,22 @@ class ProductBusinessService
         $dbService = new ProductDataService();
         $product = $dbService->getProductByID($id);
         return $product;
+    }
+    
+    public function updateProduct($id, $name, $description, $price){
+        $dbService = new ProductDataService();
+        
+        if($id < 0){ //insert as new product
+            return $dbService->insertProduct($name, $description, $price);   
+        }
+        else {
+            return $dbService->updateProduct($id, $name, $description, $price);
+        }
+    }
+    
+    public function deleteProduct($id) {
+        $dbService = new ProductDataService();
+        return $dbService->deleteProduct($id);
     }
 }
 

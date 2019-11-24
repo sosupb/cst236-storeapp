@@ -55,12 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         
         //insert the new user
-        $dbService = new RegistrationDataService();
+        $bs = new UserBusinessService();
         
-        $_SESSION['User_ID'] = $dbService->insertUser($user->getName(), $user->getPassword(), $user->getRole());
+        $_SESSION['User_ID'] = $bs->insertUser($user->getName(), $user->getPassword(), $user->getRole());
         
         if($_SESSION['User_ID'] > -1) { //successfully registered
-            $_SESSION["User"] = serialize($user);
+            $_SESSION["User"] = serialize(new User($_SESSION['User_ID'], $user->getName(), $user->getPassword(), $user->getRole()));
             $_SESSION['UserName'] = $user->getName();
         }
         else { //failed to insert new user
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
         
-        if($dbService->insertAddress($_SESSION['User_ID'], $firstName, $middleName, $lastName, $address1, $address2, $city, $state, $zipCode, $country)) {
+        if($bs->insertAddress($_SESSION['User_ID'], $firstName, $middleName, $lastName, $address1, $address2, $city, $state, $zipCode, $country)) {
             header("Location: /presentation/views/login/registered.php");
         }
         else {

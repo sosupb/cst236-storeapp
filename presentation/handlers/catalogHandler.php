@@ -16,6 +16,7 @@ Description:
     $page = 1;
     if(isset($_GET['CatalogPage'])) {
         $page = $_GET['CatalogPage'];
+        $SESSION['hello'] = 2;
     }
     
     //grab the list of products for this page
