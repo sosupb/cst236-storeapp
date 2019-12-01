@@ -62,6 +62,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($_SESSION['User_ID'] > -1) { //successfully registered
             $_SESSION["User"] = serialize(new User($_SESSION['User_ID'], $user->getName(), $user->getPassword(), $user->getRole()));
             $_SESSION['UserName'] = $user->getName();
+            
+            //generate a new cart for this user
+            $bs->generateNewCart($_SESSION['User_ID']);
         }
         else { //failed to insert new user
             $regMessageErr = "Could not create new user!";

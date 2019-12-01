@@ -203,5 +203,135 @@ class UserDataService
             return $userArray;
         }
     }
+    
+    public function addItemToUserCart($id, $itemid, $quantity) {
+        $db = new Database();
+        $connection = $db->getConnection();
+        
+        $stmt = $connection->prepare("SELECT ID FROM cart WHERE USER_ID LIKE ?");
+        
+        if(!$stmt) {
+            echo "SQL error while trying to retrieve cart to add an item.";
+            exit();
+        }
+        
+        $stmt->bind_param("i", $id);
+        
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+        
+        if($result === false){
+            echo "Error trying to retrieve cart.";
+            exit();
+        }
+        
+        $cartid = $result->fetch_assoc()['ID'];
+        
+        //check for duplicate entry
+        
+        $stmt = $connection->prepare("SELECT cart_details.ID FROM cart_details WHERE PRODUCT_ID LIKE ? AND CART_ID LIKE ?"); 
+            
+        $stmt->bind_param("ii", $cartid, $itemid);
+        
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+        if($result === false){
+            echo "Error trying to retrieve cart_details.";
+            exit();
+        }
+        else if($result->num_rows == 0) { //no entries
+            $stmt = $connection->prepare("INSERT INTO cart_details (CART_ID, PRODUCT_ID, QUANTITY) VALUES (?, ?, ?)");
+            
+            $stmt->bind_param("iii", $cartid, $itemid, $quantity);
+            
+            $stmt->execute();
+            
+            if($stmt->affected_rows == 0){
+                echo "Error trying to add to cart_details.";
+            }
+        }
+        else { //update entry
+            $stmt = $connection->prepare("UPDATE cart_details SET QUANTITY = QUANTITY + ? WHERE CART_ID LIKE ? AND PRODUCT_ID LIKE ?");
+            
+            $stmt->bind_param("iii", $quantity, $cartid, $itemid);
+            
+            $stmt->execute();
+           
+        }
+    }
+    
+    public function removeItemFromCart($id, $itemid){
+        $db = new Database();
+        $connection = $db->getConnection();
+        
+        //select the cart first
+        
+        $stmt = $connection->prepare("SELECT ID FROM cart WHERE USER_ID LIKE ?");
+        
+        $stmt->bind_param("i", $id);
+        
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+        if($result === false){
+            echo "Error trying to retrieve cart for item removal.";
+            exit();
+        }
+        
+        $cartid = $result->fetch_assoc()['ID'];
+        
+        //remove the item from the users cart
+        
+        $stmt = $connection->prepare("DELETE FROM cart_details WHERE CART_ID LIKE ? AND PRODUCT_ID LIKE ?");
+        
+        $stmt->bind_param("ii", $cartid, $itemid);
+        
+        $stmt->execute();
+        
+        $stmt->get_result();
+        if($stmt->affected_rows == 0){
+            echo "Error trying to delete cart item.";
+        }
+        
+    }
+    
+    /*
+     * This function retrieves infromation on the users cart from the database and returns an array containing product names, id, quantites and price
+     */
+    public function getUserCart($id) {
+        $db = new Database();
+        $connection = $db->getConnection();
+        $stmt = $connection->prepare("SELECT products.ID, products.PRODUCT_NAME, cart_details.QUANTITY, products.PRICE, products.DESCRIPTION 
+                                      FROM cart_details 
+                                      INNER JOIN cart ON cart.ID = cart_details.CART_ID
+                                      INNER JOIN products ON products.ID = cart_details.PRODUCT_ID
+                                      WHERE cart.USER_ID LIKE ?");
+        
+        if(!$stmt) {
+            echo "SQL error during search set up.";
+            exit();
+        }
+        
+        $stmt->bind_param("i", $id);
+        
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+        
+        if(!$result) {
+            echo "SQL error during results.";
+            return null;
+        }
+        else {
+            $itemArray = array();
+            
+            while($item = $result->fetch_assoc()) {
+                array_push($itemArray, $item);
+            }
+            return $itemArray;
+        }
+    }
 }
 

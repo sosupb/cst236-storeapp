@@ -20,7 +20,7 @@ Description: This file displays the items in the product catalog 10 at a time
 	
 	<!-- warning message if any -->
 	<?php
-        //warning messages here
+        echo $mainMessage;
     ?>
 </div>
 

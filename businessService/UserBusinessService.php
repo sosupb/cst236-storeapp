@@ -83,5 +83,40 @@ class UserBusinessService
         $dbService = new RegistrationDataService();
         return $dbService->insertAddress($ID, $firstName, $middleName, $lastName, $address1, $address2, $city, $state, $zipCode, $country);
     }
+    
+    public function generateNewCart($id) {
+        $dbService = new RegistrationDataService();
+        $dbService->generateNewCart($id);
+    }
+    
+    public function addItemToUserCart($id, $itemid, $quantity) {
+        $dbService = new UserDataService();
+        $dbService->addItemToUserCart($id, $itemid, $quantity);
+    }
+    
+    public function removeItemFromCart($id, $itemid){
+        $dbService = new UserDataService();
+        $dbService->removeItemFromCart($id, $itemid);
+    }
+    
+    public function checkCart($id){
+        $dbService = new RegistrationDataService();
+        return $dbService->checkCart($id);
+    }
+    
+    public function getUserCart($id) {
+        $dbService = new UserDataService();
+        $itemArray = $dbService->getUserCart($id);
+        
+        $cart = new Cart($id);
+        
+        if($itemArray != null) {
+            
+            foreach ($itemArray as $item){
+                $cart->addItems(new Product($item['ID'], $item['PRODUCT_NAME'], $item['DESCRIPTION'], $item['PRICE']), $item['QUANTITY']);
+            }
+        }
+        return $cart;
+    }
 }
 

@@ -240,6 +240,59 @@ body {
   	box-shadow: none;
 }
 
+/*cart styles*/
+.cartList {
+	border-collapse: collapse;
+	padding: 15px;
+	width: 75%;
+	margin: auto;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
+/*cart styles*/
+.cartList th {
+	background-color: #696868;
+	border: 1px solid #696868;
+	color: white;
+	padding: 20px;
+}
 
+/*cart styles*/
+.cartList td {
+	border: 1px solid #696868;
+	padding: 10px;
+}
+
+/*effects for remove button inside cart list*/
+.remove{
+	color: #FF0000;
+	background-color: #FFFFFF;
+	cursor: pointer;
+}
+
+/*hover effect for remove button inside cart list*/
+.remove:hover{
+	color: #FFFFFF;
+	background-color: #f02f2f;
+	cursor: pointer;
+}
+
+/*add to cart button on item veiw page*/
+.cartButton{
+	border: none;
+  	outline: 0;
+  	padding: 12px;
+  	color: white;
+  	background-color: #62b9ae;
+  	text-align: center;
+  	ox-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  	cursor: pointer;
+}
+
+/*hover effect for add to cart button on item veiw page*/
+.cartButton:hover{
+	color: black;
+	background-color: #f7d05e;
+	cursor: pointer;
+}
 

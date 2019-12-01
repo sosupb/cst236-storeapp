@@ -44,6 +44,12 @@ Description:
                 $_SESSION['UserName'] = $user->getName();
                 $_SESSION['User'] = serialize($bs->findByID($_SESSION['User_ID']));
                 
+                //check to see if the current user has a cart yet and ceate one if they do not
+                $b_cart = $bs->checkCart($_SESSION['User_ID']);
+                if(!$b_cart){
+                    $bs->generateNewCart($_SESSION['User_ID']);   
+                }            
+                
                 header("Location: /index.php");
             } 
             else {          //failed login

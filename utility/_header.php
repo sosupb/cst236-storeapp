@@ -26,8 +26,9 @@ Description: This file contains all the required php and html to create the top 
               <?php 
               if(isset($_SESSION['User_ID']) && $_SESSION['User_ID'] != -1 && $_SERVER['PHP_SELF'] != '/presentation/views/login/logout.php') {
                   echo '<p>You are logged in as ' . $_SESSION['UserName'] . ' </p>';
-                  echo '<a href="/presentation/views/login/logout.php">Logout</a>';
                   echo '<a href="/presentation/handlers/editUserHandler.php?UserID=' . $_SESSION['User_ID'] . '">Edit Profile</a>';
+                  echo '<a href="/presentation/views/cart/viewCart.php">Cart</a>';
+                  echo '<a href="/presentation/views/login/logout.php">Logout</a>';
               } else {
                   $_SESSION['User_ID'] = -1;
                   echo '<a href="/presentation/views/login/login.php">Login/Sign Up</a>';

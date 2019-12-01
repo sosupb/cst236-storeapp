@@ -12,9 +12,9 @@ foreach ($products as $product) {
         //echo "<img src='' alt='' style='width:100%'>";
         echo "<h1>" . $product['PRODUCT_NAME'] . "</h1>";
         echo "<p class='price'>$" . $product['PRICE'] . "</p>";
-        echo "<p><b>Desrciption</b><br>" . $product['DESCRIPTION'] . "</p>";
-        //echo "<p><button>Add to Cart</button></p>";
-    echo "</button></span>";
+        echo "<p><b>Desrciption</b><br>" . $product['DESCRIPTION'] . "</p></button>";
+        echo "<p><button onclick=\"window.location.href='catalog.php?CatalogPage=" . $page . "&AddToCart=" . $product['ID'] . "';\">Add to Cart</button></p>";
+    echo "</span>";
     $itemNumber++;
     if($itemNumber == 6) {
         echo "</div><div>";

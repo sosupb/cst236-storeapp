@@ -20,7 +20,7 @@ Description: This file displays a single item in the catalog.
 	
 	<!-- warning message if any -->
 	<?php
-        //warning messages here
+        echo $mainMessage;
     ?>
 </div>
 
@@ -34,6 +34,7 @@ else {
         echo "<h1>" . $product['PRODUCT_NAME'] . "</h1><br>";
         echo "<p>Description: " . $product['DESCRIPTION'] . "</p><br>";
         echo "<p>Price per item: $" . $product['PRICE'] . "</p><br>";
+        echo "<button class=\"cartButton\" onclick=\" window.location.href='/presentation/views/catalog/itemView.php?ItemID=" . $product['ID'] . "&AddToCart=" . $product['ID'] . "';\">Add To Cart</button><br>";
         if($adminStatus){
             echo "<button onclick=\" window.location.href='/presentation/handlers/editItemHandler.php?ItemID=" . $product['ID'] . "'\">Edit Product</button>";
         }

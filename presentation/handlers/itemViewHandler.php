@@ -12,6 +12,9 @@ Description:
     include_once $_SERVER['DOCUMENT_ROOT'] . '/utility/header.php';
     require_once $_SERVER['DOCUMENT_ROOT'] . '/Autoloader.php';
     
+    //used to tell the user if something like an add to cart has occured
+    $mainMessage = "";
+    
     //check for admin status
     $adminStatus = false;
     if(isset($_SESSION['User'])){
@@ -24,6 +27,12 @@ Description:
     $itemID = 1;
     if(isset($_GET['ItemID'])) {
         $itemID = $_GET['ItemID'];
+    }
+    
+    if($_SESSION['User_ID'] != -1 && isset($_GET['AddToCart'])) { //adds a single item to the cart
+        $bs = new UserBusinessService();
+        $bs->addItemToUserCart($_SESSION['User_ID'], $_GET['AddToCart'], 1);
+        $mainMessage = "This item has been added to your cart.";
     }
     
     //grab the list of products for this page

@@ -80,4 +80,46 @@ class RegistrationDataService
             return false;
         }
     }
+    
+    public function checkCart($id){
+        $db = new Database();
+        
+        $conn = $db->getConnection();
+        
+        //insert parameters for a cart
+        $query = "SELECT * FROM cart WHERE USER_ID LIKE ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('i', $id);
+        
+        $stmt->execute();
+        if($stmt->num_rows < 1) {
+            return false;
+        }
+        return true;
+    }
+    
+    public function generateNewCart($id) {
+        
+        $total = 0.0;
+        $db = new Database();
+        
+        $conn = $db->getConnection();
+        
+        //insert parameters for a cart
+        $query = "INSERT INTO `cart` (USER_ID, TOTAL) VALUES (?, ?)";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('id', $id, $total);
+        
+        $stmt->execute();
+        
+        if ($stmt->affected_rows > 0) { //successful entry
+            $conn->close();
+            return true;
+        } else { //there was and error
+            $conn->close();
+            return false;
+        }
+    }
 }
