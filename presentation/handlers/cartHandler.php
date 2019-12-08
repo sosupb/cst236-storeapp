@@ -12,10 +12,11 @@ Description:
     include_once $_SERVER['DOCUMENT_ROOT'] . '/utility/header.php';
     require_once $_SERVER['DOCUMENT_ROOT'] . '/Autoloader.php';
     
-    
     if($_SESSION['User_ID'] != -1) {
         $bs = new UserBusinessService();
         $cart = $bs->getUserCart($_SESSION['User_ID']);
         $products = $cart->getItemsList();
     }
+    
+    
 ?>

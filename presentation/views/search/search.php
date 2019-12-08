@@ -24,7 +24,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Autoloader.php';
     ?>
 </div>
 <section class="searchFormWrapper">
-    <form action="../../handlers/searchHandler.php" method="GET" class="searchForm">
+    <form action="../../handlers/searchHandler.php" method="GET">
     	<label for="searchType">Search Type:</label><br>
     		<select id="searchType" name="searchType">
     			<?php 

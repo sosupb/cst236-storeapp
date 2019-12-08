@@ -43,8 +43,7 @@ class UserBusinessService
         $dbService = new UserDataService();
         
         $address = $dbService->getUserAddress($id);
-        echo $address['FIRST_NAME'];
-        return new Address($address['FIRST_NAME'], $address['LAST_NAME'], $address['MIDDLE_NAME'], $address['ADDRESS_1'], $address['ADDRESS_2'], $address['CITY'], $address['STATE'], $address['ZIPCODE'], $address['COUNTRY']);
+        return new Address($address['ID'], $address['FIRST_NAME'], $address['LAST_NAME'], $address['MIDDLE_NAME'], $address['ADDRESS_1'], $address['ADDRESS_2'], $address['CITY'], $address['STATE'], $address['ZIPCODE'], $address['COUNTRY']);
     }
     
     public function loginUser($name, $password) {
@@ -97,6 +96,13 @@ class UserBusinessService
     public function removeItemFromCart($id, $itemid){
         $dbService = new UserDataService();
         $dbService->removeItemFromCart($id, $itemid);
+    }
+    
+    public function removeAllItemsFromCart($id) {
+        $cart = $this->getUserCart($id);
+        foreach($cart->getItemsList() as $item) {
+            $this->removeItemFromCart($id, $item['ID']);
+        }
     }
     
     public function checkCart($id){

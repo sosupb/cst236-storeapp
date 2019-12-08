@@ -47,7 +47,7 @@ else {
     		<span class="error">* <?php if(isset($itemNameErr)) {echo $itemNameErr;}?></span>
     		<br/><br/>
     	<label for="description">Description:</label><br/>
-    		<input id="description" type="text" name="Description" maxlength="300" value="<?php echo $viewedItem->getDescription()?>"/>	
+    		<input style="width: 100%;" id="description" type="text" name="Description" maxlength="300" value="<?php echo $viewedItem->getDescription()?>"/>	
     		<br/><br/>
     	<label for="price">Price:</label><br/>
     		<input id="price" type="number" name="Price" step="any" min="0.01" value="<?php echo $viewedItem->getPrice(); ?>"/>

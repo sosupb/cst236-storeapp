@@ -9,6 +9,88 @@ Description:
    
 */
 
+/*credit card form styles */
+.creditCardForm {
+    max-width: 700px;
+    background-color: #fff;
+    margin: 10px auto;
+    overflow: hidden;
+    padding: 5px;
+    color: #4c4e56;
+}
+.creditCardForm label {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.creditCardForm .heading h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #4c4e56;
+}
+.creditCardForm .payment {
+    float: left;
+    font-size: 18px;
+
+    margin-top: 20px;
+    position: relative;
+}
+.creditCardForm .payment .form-group {
+    float: left;
+    margin-bottom: 15px;
+}
+.creditCardForm .payment .form-control {
+    line-height: 40px;
+    height: auto;
+    padding: 0 16px;
+}
+.creditCardForm .owner {
+    width: 50%;
+    /*margin-right: 10px;*/
+}
+.creditCardForm .CVV {
+    width: 50%;
+}
+.creditCardForm #card-number-field {
+    width: 100%;
+}
+.creditCardForm #expiration-date {
+    width: 100%;
+}
+.creditCardForm #credit_cards {
+    width: 50%;
+    margin-top: 25px;
+    text-align: right;
+}
+.creditCardForm #pay-now {
+    width: 100%;
+    margin-top: 25px;
+}
+.creditCardForm .payment .btn {
+    width: 100%;
+    margin-top: 3px;
+    font-size: 24px;
+    background-color: #2ec4a5;
+    color: white;
+}
+.creditCardForm .payment select {
+    padding: 10px;
+    margin-right: 15px;
+}
+.transparent {
+    opacity: 0.2;
+}
+@media(max-width: 650px) {
+    .creditCardForm .owner,
+    .creditCardForm .CVV,
+    .creditCardForm #expiration-date,
+    .creditCardForm #credit_cards {
+        width: 100%;
+    }
+    .creditCardForm #credit_cards {
+        text-align: left;
+    }
+}
+
 /*Form styles for both registration and login*/
 .loginForm {
     width: 47%;
@@ -125,14 +207,14 @@ Description:
 
 
 /*styling for each field in the registration form and login page except the submit button*/
-input[type=text], input[type=password], input[type=email], select{
+.loginFormWrapper input[type=text], .loginFormWrapper input[type=password], .loginFormWrapper input[type=email], .loginFormWrapper select{
 	width: 50%;
 	padding: 5px;
 	border: 2px solid #40a5a2;
 }
 
 /*styling for the submit button*/
-input[type=submit]{
+.loginFormWrapper input[type=submit]{
 	width: 50%;
 	padding: 5px;
 	display: block;
@@ -146,7 +228,35 @@ input[type=submit]{
 }
 
 /*shadow and color effects for submit button*/
-input[type=submit]:hover{
+.loginFormWrapper input[type=submit]:hover{
+	background-color: white;
+  	color: #4CAF50;
+  	box-shadow: none;
+}
+
+/*styling for each field in the registration form and login page except the submit button*/
+.searchForm input[type=text], .searchForm input[type=password], .searchForm input[type=email], .searchForm select{
+	width: 50%;
+	padding: 5px;
+	border: 2px solid #40a5a2;
+}
+
+/*styling for the submit button*/
+.searchForm input[type=submit]{
+	width: 50%;
+	padding: 5px;
+	display: block;
+	margin: 0 auto;
+	background-color: #4CAF50;
+	color: white;
+	border-color: #4CAF50;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+/*shadow and color effects for submit button*/
+.searchForm input[type=submit]:hover{
 	background-color: white;
   	color: #4CAF50;
   	box-shadow: none;
@@ -246,7 +356,8 @@ body {
 	padding: 15px;
 	width: 75%;
 	margin: auto;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+	filter: drop-shadow(0 6px 20px rgba(0,0,0,0.39));
 }
 
 /*cart styles*/
@@ -260,6 +371,7 @@ body {
 /*cart styles*/
 .cartList td {
 	border: 1px solid #696868;
+	background-color: white;
 	padding: 10px;
 }
 

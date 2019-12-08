@@ -29,7 +29,7 @@ if(!isset($viewedUser)){
 else {
 ?>
 
-<section class='searchFormWrapper'>				
+<section class="searchFormWrapper">				
     <!-- Registration Form -->
     <form action="/presentation/handlers/editUserHandler.php" method="POST" class="loginForm" style="margin: auto">
     	<p align="right"><span class="error"><?php if(isset($regMessageErr)) {echo $regMessageErr;}?></span></p>

@@ -10,6 +10,7 @@
 class Address
 {
     //properties
+    private $id;
     private $firstName;
     private $lastName;
     private $middleName;
@@ -22,7 +23,8 @@ class Address
     
     
     //constructor
-    public function __construct($firstName, $lastName, $middleName, $addressLineOne, $addressLineTwo, $city, $state, $postalCode, $country) {
+    public function __construct($id, $firstName, $lastName, $middleName, $addressLineOne, $addressLineTwo, $city, $state, $postalCode, $country) {
+        $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->middleName = $middleName;
@@ -34,12 +36,22 @@ class Address
         $this->country = $country;
     }
     
-    
+
     //methods
     
     
     
     //getters and setters
+    
+    public function getId()
+    {
+        return $this->id;
+    }
+    
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return String

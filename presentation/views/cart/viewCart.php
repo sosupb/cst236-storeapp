@@ -25,5 +25,10 @@ Description: This file displays the users cart items in a list and allows them t
 
 <?php if($_SESSION['User_ID'] != -1) {include "_displayCartContents.php";} ?>
 
+<div style="padding: 20px; text-align: center;">
+	<!-- Checkout button -->
+	<button class="cartButton" onclick="window.location.href='/presentation/views/checkout/processCheckout.php?Page=1'">Checkout</button>
+</div>
+
 <!-- footer -->
 <?php include $_SERVER['DOCUMENT_ROOT']. '/utility/_footer.php'?>

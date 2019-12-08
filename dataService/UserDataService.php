@@ -70,6 +70,32 @@ class UserDataService
             return $result->fetch_assoc();
         }
     }
+    
+    public function getAddressByID($address_id) {
+        $db = new Database();
+        $connection = $db->getConnection();
+        $stmt = $connection->prepare("SELECT * FROM address WHERE ID LIKE BINARY ?");
+        
+        if(!$stmt) {
+            echo "SQL error during search set up.";
+            exit();
+        }
+        
+        $stmt->bind_param("i", $address_id);
+        
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+        
+        if(!$result) {
+            echo "SQL error during results.";
+            return null;
+            exit();
+        }
+        else {
+            return $result->fetch_assoc();
+        }
+    }
 
     public function getUserAddress($id) {
         $db = new Database();
