@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //check for empty fields
         
-    $address = new Address($_POST["FirstName"], $_POST["LastName"], $_POST["MiddleName"], $_POST["Address1"], $_POST["Address2"], $_POST["City"], $_POST["State"], $_POST["Zipcode"], $_POST["Country"]);
+    $address = new Address(-1, $_POST["FirstName"], $_POST["LastName"], $_POST["MiddleName"], $_POST["Address1"], $_POST["Address2"], $_POST["City"], $_POST["State"], $_POST["Zipcode"], $_POST["Country"]);
     
     if (empty($address->getFirstName())) {
         $firstNameErr = "You must enter a first name!";
