@@ -75,7 +75,8 @@ class OrderDataService
                                 FROM orders 
                                 INNER JOIN order_details ON orders.ID = order_details.ORDER_ID
                                 INNER JOIN products ON order_details.PRODUCT_ID = products.ID 
-                                WHERE ORDER_DATE BETWEEN ? AND ?");
+                                WHERE ORDER_DATE BETWEEN ? AND ?
+                                ORDER BY order_details.QUANTITY DESC");
         
         if(!$stmt) {
             $conn->close();

@@ -9,6 +9,69 @@ Description:
    
 */
 
+/*form wrapper for range date picker during sales reports*/
+.reportDatePickerForm {
+	display: flex;
+}
+
+/*form styles for range date picker during sales reports*/
+.datePickerForm {
+	padding: 20px;
+	width: 30%;
+	margin:auto;
+}
+
+/*Date picker input styles for sales report*/
+.datePickerFormElements {
+	padding: 5px;
+}
+
+/*Date picker form buttons for sales report*/
+.datePickerFormElements button{
+	border: none;
+  	outline: 0;
+  	padding: 12px;
+  	color: white;
+  	background-color: #008080;
+  	text-align: center;
+  	cursor: pointer;
+}
+
+/*Date picker button hover effects*/
+.datePickerFormElements button:hover{
+	color: #008080;
+	background-color: white;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*table wrapper styles for sales reports*/
+.reportTableWrapper {
+	display: flex;
+}
+
+/*table style for spacing and padding*/
+.reportTable {
+	padding: 20px;
+	width: 90%;
+	margin: auto;
+	border-collapse: collapse;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*table header styles for sales report*/
+.reportTable th {
+	background-color: #696868;
+	border: 1px solid #696868;
+	color: white;
+	padding: 20px;
+}
+
+/*table cell styles for sales report*/
+.reportTable td {
+	border: 1px solid #696868;
+	padding: 10px;
+}
+
 /*credit card form styles */
 .creditCardForm {
     max-width: 700px;
