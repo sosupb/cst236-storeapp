@@ -50,6 +50,9 @@ Description: This file contains all the required php and html to create the top 
               <a href="/index.php" <?php if(basename($_SERVER['PHP_SELF']) == "index.php") { echo 'style="background-color: #429b82";'; } ?>>Home</a>
               <a href="/presentation/views/catalog/catalog.php?CatalogPage=1" <?php if(basename($_SERVER['PHP_SELF']) == "catalog.php") { echo 'style="background-color: #429b82";'; } ?>>Catalog</a>
               <a href="/presentation/views/search/search.php" <?php if(basename($_SERVER['PHP_SELF']) == "search.php") { echo 'style="background-color: #429b82";'; } ?>>Search</a>
+              <?php if($_SESSION['Admin']){?>
+              <a href="/presentation/views/reports/salesReport.php" <?php if(basename($_SERVER['PHP_SELF']) == "salesReport.php") { echo 'style="background-color: #429b82";'; } ?>>Reports</a>
+              <?php }?>
               <!-- add more buttons for the header here -->
               
             </div>

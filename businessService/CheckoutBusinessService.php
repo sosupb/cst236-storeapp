@@ -28,7 +28,7 @@ class CheckoutBusinessService
         $ccbs = new CreditCardBusinessService();
         
         //setup for new order fields
-        $order = new Order(-1, $cart->getUserid(), $address_id, $cart->getTotal(), date("M d, Y"));
+        $order = new Order(-1, $cart->getUserid(), $address_id, $cart->getTotal(), date("Y-m-d"));
         
         //attempt to add new order to the database
         $order->setId($ods->createNewOrder($conn, $order));
