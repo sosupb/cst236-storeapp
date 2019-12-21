@@ -16,6 +16,7 @@ Description:
     $checkoutTitle = "";
     $checkoutError = "";
     $page = 1;
+    $discount = ""; //this is used to display a discout to the user if one is attached to this order
     
     if($_SESSION['User_ID'] != -1) {
         $bs = new UserBusinessService();
@@ -74,6 +75,21 @@ Description:
         else {
             $checkoutError = "There was a problem with your address during checkout";
             $page = 4;
+        }
+        
+        if(isset($_GET['Coupon'])) { //the user is attempting to access a coupon
+            $bsCheckout = new CheckoutBusinessService();
+            if($bsCheckout->checkCouponValidity($_GET['Coupon'])){ //coupon exists
+                if($bsCheckout->checkCouponUsage($_GET['Coupon'], $_SESSION['User_ID'])) { //the user is allowed to use this coupon
+                    $bsCheckout->updateCartWithCode($_GET['Coupon'], $cart); //update the cost amount
+                }
+                else {
+                    $checkoutError = "You have used that code too many times already";
+                }
+            }
+            else {
+                $checkoutError = "There was no coupon matching that code";
+            }
         }
     }
     

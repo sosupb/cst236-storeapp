@@ -19,13 +19,19 @@ Description:
         
         //grab all the neccessary information
         $bs = new UserBusinessService();
+        $cs = new CheckoutBusinessService();
+        
         $cart = $bs->getUserCart($_SESSION['User_ID']);
+        //add a code if there is one
+        if(isset($_GET['Coupon'])) {
+            $cs->updateCartWithCode($_GET['Coupon'], $cart);
+        }
+        
         $products = $cart->getItemsList();        
         $card = unserialize($_SESSION['CreditCard']);
         $address = unserialize($_SESSION['CheckoutAddress']);
 
-        $bs = new CheckoutBusinessService();
-        if($bs->checkout($cart, $address->getId(), $card)) {
+        if($cs->checkout($cart, $address->getId(), $card)) {
             $pageTitle = "Your order has been completed!";
         }
         else {

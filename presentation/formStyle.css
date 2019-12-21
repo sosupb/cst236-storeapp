@@ -9,6 +9,45 @@ Description:
    
 */
 
+/*this is styles for the coupon code box during checkout*/
+.couponCodeBox {
+	display: block;
+	padding: 5px;
+	margin: auto;
+	width: 100%;
+}
+
+/*input text field for coupon code box*/
+.couponCodeBox input[type=text]{
+	width: 120px;
+	margin: 3px;
+}
+
+/*turn coupon placeholder to italics*/
+.couponCodeBox input::placeholder{
+	font-style: italic;
+}
+
+/*button field for coupon code box*/
+.couponCodeBox button{
+	border: none;
+  	outline: 0;
+  	padding: 12px;
+  	color: white;
+  	background-color: #62b9ae;
+  	text-align: center;
+  	ox-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  	cursor: pointer;
+}
+
+/*button field for coupon code box hover effects*/
+.couponCodeBox button:hover{
+	color: black;
+	background-color: #f7d05e;
+	cursor: pointer;
+  	
+}
+
 /*form wrapper for range date picker during sales reports*/
 .reportDatePickerForm {
 	display: flex;

@@ -12,12 +12,19 @@ class Cart
     private $userid;
     private $items;
     private $total;
+    private $discount;
+    private $discountCode;
+    private $isDiscountPercent;
+    private $isDicountActive;
     
     //constructor
     public function __construct($userid){
         $this->userid = $userid;
         $this->items = array();
         $this->total = 0.0;
+        $this->discount = 0.0;
+        $this->isDiscountPercent = false;
+        $this->isDicountActive = false;
         
     }
     
@@ -50,6 +57,45 @@ class Cart
         return $itemArray;
     }
     
+    //this method prints the discout based on its type
+    public function displayDiscountString() {
+        if(!$this->isDicountActive) { //no active discount so return empty string
+            return "";
+        }
+        
+        if($this->isDiscountPercent) { //this discount needs to be treated as a percentage off
+            return $this->discount . "% off";
+        }
+        else { //this discount is a flat amount off of the total
+            return "-$" . $this->discount . " off";
+        }
+    }
+    
+    //this method grabs the total amount of discount 
+    public function getCurrentDiscountAmount() {
+        if(!$this->isDicountActive) { //no discount so return zero
+            return 0;
+        }
+        
+        if($this->isDiscountPercent) { //treat as a percentage
+            return ($this->discount / 100) * $this->total;
+        }
+        else {
+            return $this->discount;
+        }
+           
+    }
+    
+    //this method finds the subtotal based on the current discount
+    public function getTotalAfterDiscount()
+    {
+        if(!$this->isDicountActive) {
+            return $this->total;
+        }
+        
+        return $this->total - $this->getCurrentDiscountAmount();
+    }
+    
     //getters and setters
 
     /**
@@ -68,6 +114,49 @@ class Cart
         return $this->total;
     }
     
+    public function setTotal($total)
+    {
+        $this->total = $total;
+    }
     
+    public function getDiscout()
+    {
+        return $this->discount;
+    }
+
+    public function setDiscount($discout)
+    {
+        $this->discount = $discout;
+    }
+
+    public function getIsDiscountPercent()
+    {
+        return $this->isDiscountPercent;
+    }
+
+    public function setIsDiscountPercent($isDiscountPercent)
+    {
+        $this->isDiscountPercent = $isDiscountPercent;
+    }
+
+    public function getIsDicountActive()
+    {
+        return $this->isDicountActive;
+    }
+
+    public function setIsDicountActive($isDicountActive)
+    {
+        $this->isDicountActive = $isDicountActive;
+    }
+    
+    public function getDiscountCode()
+    {
+        return $this->discountCode;
+    }
+
+    public function setDiscountCode($discountCode)
+    {
+        $this->discountCode = $discountCode;
+    }
 }
 
