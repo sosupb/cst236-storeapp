@@ -93,7 +93,11 @@ class Cart
             return $this->total;
         }
         
-        return $this->total - $this->getCurrentDiscountAmount();
+        $discountedTotal = $this->total - $this->getCurrentDiscountAmount();
+        if($discountedTotal < 0) {
+            $discountedTotal = 0.0;
+        }
+        return $discountedTotal;
     }
     
     //getters and setters
