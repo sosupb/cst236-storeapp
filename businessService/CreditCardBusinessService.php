@@ -23,6 +23,11 @@ class CreditCardBusinessService
             return false;
         }
         
+        //check for name
+        if($card->getName() == ""){
+            return false;
+        }
+        
         return true;
     }
     

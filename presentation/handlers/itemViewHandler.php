@@ -29,10 +29,15 @@ Description:
         $itemID = $_GET['ItemID'];
     }
     
-    if($_SESSION['User_ID'] != -1 && isset($_GET['AddToCart'])) { //adds a single item to the cart
-        $bs = new UserBusinessService();
-        $bs->addItemToUserCart($_SESSION['User_ID'], $_GET['AddToCart'], 1);
-        $mainMessage = "This item has been added to your cart.";
+    if(isset($_GET['AddToCart'])) { //adds a single item to the cart
+        if($_SESSION['User_ID'] != -1) {
+            $bs = new UserBusinessService();
+            $bs->addItemToUserCart($_SESSION['User_ID'], $_GET['AddToCart'], 1);
+            $mainMessage = "This item has been added to your cart.";
+        }
+        else {
+            $mainMessage = "<p style='color: red;'>You must be logged in to add to your cart.</p>";
+        }
     }
     
     //grab the list of products for this page

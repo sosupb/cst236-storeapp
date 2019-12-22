@@ -287,6 +287,7 @@ Description:
 /*form wrapper for the search forms*/
 .searchFormWrapper {
 	display: flex;
+	width: 100%;
 }
 
 /*Form wrapper to display them together on one line*/

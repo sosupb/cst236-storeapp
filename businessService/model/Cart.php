@@ -97,7 +97,7 @@ class Cart
         if($discountedTotal < 0) {
             $discountedTotal = 0.0;
         }
-        return $discountedTotal;
+        return $discountedTotal; 
     }
     
     //getters and setters

@@ -16,7 +16,7 @@ Description:
     $checkoutTitle = "";
     $checkoutError = "";
     $page = 1;
-    $discount = ""; //this is used to display a discout to the user if one is attached to this order
+    $discount = ""; //this is used to display a discount to the user if one is attached to this order
     
     if($_SESSION['User_ID'] != -1) {
         $bs = new UserBusinessService();
